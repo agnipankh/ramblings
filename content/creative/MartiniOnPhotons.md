@@ -1,9 +1,15 @@
 Title: Martini On Photons
-Date: 2010-12-03 10:20
+Date: 2024-09-23 10:20
 Category: Creative
 
 ### Martini On Photons
 
-There is no joy but to paint with light and there are infinite possibilities while the reality never changes. 
+Painting with light is just a joy to use. One keeps the camera on the tripod along with a still life and then go around and light the scene with a flashlight as you see fit. Some examples follow. 
+
+
 ![image](images/Martini1.jpg)
+![image](images/Martini2.jpg)
+![image](images/Martini3.jpg)
+
+
 
