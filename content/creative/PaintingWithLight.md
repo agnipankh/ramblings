@@ -1,5 +1,5 @@
 Title: Painting with Light
-Date: 2019-10-24 10:20
+Date: 2024-09-24 10:20
 Category: Creative
 Tags: photograph
 Slug: multipe-exposure-1
