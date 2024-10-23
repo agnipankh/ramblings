@@ -18,6 +18,10 @@ philosophy: neither its pipes nor its theories will hold water.”
 
 > John W. Gardener
 
+I restarted this blog recently so some of the contents of this blog may be old. I ditched all the old technical content because its obsolete at this point. 
+
+
+
 ---- 
 
 325 Edison Place 
