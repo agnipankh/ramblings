@@ -3,6 +3,7 @@ Date: 2024-01-20 10:20
 Category: Creative
 Tags: photograph
 Slug: the_little_prince_20250316
+Cover: /images/creative/littlePrince_20250316.png
 
 
 This document was created mapping the
@@ -27,4 +28,3 @@ baobab trees.
     <img src="{static}/images/creative/littlePrince_20250316.png" alt="Justin on Asteroid B-612">
     <figcaption>Justin on Asteroid B-612</figcaption>
 </figure>
-

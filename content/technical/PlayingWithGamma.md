@@ -3,6 +3,7 @@ Date: 2017-05-23
 Category: Technical
 Tags: Movies, Photography
 Slug: gamma-1-20170523
+Cover: /images/technical/gamma_original.png
 
 __Gamma__ is the non-linearity in the CRT which
 matches closely the non-linearity in the
@@ -49,5 +50,4 @@ resolution of 864x1145.__
     <img src="{static}/images/technical/gamma_blurred.png" alt="Original Image">
     <figcaption>Blurred with a radius of two pixels</figcaption>
 </figure>
-
 

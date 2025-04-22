@@ -3,6 +3,7 @@ Date: 2025-01-17 10:20
 Category: Creative
 Tags: photograph
 Slug: klimt_kiss
+Cover: /images/creative/klimt_kiss_20250315.png
 
 
 Using a large number of images from your
@@ -23,5 +24,4 @@ original or if you want help in how to do it
 yourself.
 
 ![image]({static}/images/creative/klimt_kiss_20250315.png)
-
 

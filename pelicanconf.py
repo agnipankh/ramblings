@@ -40,7 +40,7 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 TYPOGRIFY = True
 
 
-# THEME="/Users/amit/anaconda3/envs/blog/lib/python3.11/site-packages/pelican/themes/html5up-massively"
+THEME="/Users/amit/Dropbox/DCode/ramblings/themes/attila"
 
 ### Attila specific
 
@@ -56,3 +56,8 @@ ARCHIVES_SAVE_AS = 'archives.html'
 # If your theme uses author pages
 AUTHOR_URL = 'author/{slug}.html'
 AUTHOR_SAVE_AS = 'author/{slug}.html'
+
+# Show post cover images in article listings
+SHOW_COVER_IN_LISTING = True
+# Display post cover images with a specific max height
+INDEX_COVER_IMAGE_HEIGHT = '250px'

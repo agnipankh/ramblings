@@ -3,6 +3,7 @@ Date: 2017-11-25
 Category: Technical
 Tags: Deep Networks
 Slug: DNN-1-20171125
+Cover: /images/technical/style_xfr3_20250315.png
 
 
 

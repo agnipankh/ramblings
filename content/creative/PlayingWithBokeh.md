@@ -3,6 +3,7 @@ Date: 2024-12-20 10:20
 Category: Creative
 Tags: photograph
 Slug: playing-with-bokeh-1
+Cover: /images/Bokeh_xmas1_20250315.png
 
 Bokeh (pronounced /bo'ka/) is the visual
 quality of the out-of-focus areas of a
@@ -24,5 +25,4 @@ shapes of the christmas tree.
 
 ![image]({static}/images/Bokeh_xmas1_20250315.png)
 ![image]({static}/images/Bokeh_xmas2_20250315.png)
-
 
