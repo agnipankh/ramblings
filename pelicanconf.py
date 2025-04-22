@@ -38,3 +38,21 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
 
 # Use Typogrify
 TYPOGRIFY = True
+
+
+# THEME="/Users/amit/anaconda3/envs/blog/lib/python3.11/site-packages/pelican/themes/html5up-massively"
+
+### Attila specific
+
+HOME_COVER = 'https://geekyshacklebolt.github.io/blog/images/my-blog-header-bg.jpg'
+# URLs
+TAGS_URL = 'tags.html'
+TAGS_SAVE_AS = 'tags.html'
+CATEGORIES_URL = 'categories.html'
+CATEGORIES_SAVE_AS = 'categories.html'
+ARCHIVES_URL = 'archives.html'
+ARCHIVES_SAVE_AS = 'archives.html'
+
+# If your theme uses author pages
+AUTHOR_URL = 'author/{slug}.html'
+AUTHOR_SAVE_AS = 'author/{slug}.html'
