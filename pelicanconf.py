@@ -53,11 +53,22 @@ CATEGORIES_SAVE_AS = 'categories.html'
 ARCHIVES_URL = 'archives.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 
-# If your theme uses author pages
-AUTHOR_URL = 'author/{slug}.html'
-AUTHOR_SAVE_AS = 'author/{slug}.html'
+# URL and path settings
+PAGE_URL = 'pages/{slug}.html'
+PAGE_SAVE_AS = 'pages/{slug}.html'
+INDEX_SAVE_AS = 'blog.html'  # Move the default index to blog.html
 
 # Show post cover images in article listings
 SHOW_COVER_IN_LISTING = True
-# Display post cover images with a specific max height
-INDEX_COVER_IMAGE_HEIGHT = '250px'
+
+# Show categories in navigation menu
+SHOW_CATEGORIES_ON_MENU = False  # We're using MENUITEMS instead for more control
+
+# Menu items
+MENUITEMS = (
+    ('Home', '/'),
+    ('Blog', '/blog.html'),
+    ('Technical', '/category/technical.html'),
+    ('Business', '/category/business.html'),
+    ('Creative', '/category/creative.html'),
+)

@@ -6,7 +6,7 @@ This document outlines the changes needed to display post images on the main pag
 
 1. **Configuration Changes**: The `pelicanconf.py` file has been updated to:
    - Use the local theme path: `/Users/amit/Dropbox/DCode/ramblings/themes/attila`
-   - Add configurations to show cover images: `SHOW_COVER_IN_LISTING = True` and `INDEX_COVER_IMAGE_HEIGHT = '250px'`
+   - Add configuration to show cover images: `SHOW_COVER_IN_LISTING = True`
 
 2. **Post Metadata**: Several posts have been updated to include a `Cover:` metadata field that points to the image to display:
    - `content/creative/Klimt_Kiss.md`
@@ -62,6 +62,15 @@ This document outlines the changes needed to display post images on the main pag
    Cover: /images/path/to/image.jpg
    ```
 
+## Image Sizing
+
+The CSS has been configured to make the images display at the same width as the text content. This creates a clean, consistent layout throughout your blog. The images will:
+
+- Span the full width of the text area
+- Maintain their aspect ratio
+- Have a subtle shadow and rounded corners
+- Include a light hover effect (scale up slightly when hovered)
+
 ## Testing
 
 After making these changes, you can test the site locally using:
@@ -69,4 +78,4 @@ After making these changes, you can test the site locally using:
 make serve
 ```
 
-This will serve the site at http://localhost:8000 where you can verify that post images are displayed on the main page.
+This will serve the site at http://localhost:8000 where you can verify that post images are displayed on the main page at the correct size.

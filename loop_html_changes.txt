@@ -11,7 +11,7 @@ Add the following code right after the post-meta span in loop.html:
             {% set featured_image = SITEURL+"/"+article.cover %}
         {% endif %}
         <a href="{{ SITEURL }}/{{ article.url }}">
-            <img src="{{ featured_image }}" alt="{{ article.title }}" style="max-width: 100%; height: auto; max-height: {{ INDEX_COVER_IMAGE_HEIGHT|default('250px') }}; margin: 20px 0; display: block;">
+            <img src="{{ featured_image }}" alt="{{ article.title }}">
         </a>
     </div>
 {% endif %}
