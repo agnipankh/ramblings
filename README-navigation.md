@@ -1,12 +1,12 @@
-# Adding Navigation Menu Items
+# Navigation Menu Items
 
-This document explains the changes made to add "Home", "Technical", "Business", and "Creative" navigation links to the main menu.
+This document explains the navigation structure with "Blog", "Technical", "Business", and "Creative" links in the main menu.
 
-## Changes Made
+## Configuration
 
-1. **Added Menu Items Configuration**: The `pelicanconf.py` file has been updated to:
-   - Define navigation menu items using the `MENUITEMS` parameter
-   - Disable automatic category display in the menu with `SHOW_CATEGORIES_ON_MENU = False`
+1. **Menu Items Configuration**: The `pelicanconf.py` file contains:
+   - Navigation menu items defined using the `MENUITEMS` parameter
+   - Automatic category display disabled in the menu with `SHOW_CATEGORIES_ON_MENU = False`
 
 ```python
 # Show categories in navigation menu
@@ -14,7 +14,7 @@ SHOW_CATEGORIES_ON_MENU = False  # We're using MENUITEMS instead for more contro
 
 # Menu items
 MENUITEMS = (
-    ('Home', '/'),
+    ('Blog', '/'),
     ('Technical', '/category/technical.html'),
     ('Business', '/category/business.html'),
     ('Creative', '/category/creative.html'),
@@ -26,7 +26,7 @@ MENUITEMS = (
 The theme's navigation template (`/themes/attila/templates/partials/navigation-items.html`) automatically processes the `MENUITEMS` configuration to generate navigation links.
 
 The navigation links will appear at the top of your site, allowing users to:
-- Return to the home page
+- Go to the Blog (main page)
 - Browse posts filtered by the Technical category
 - Browse posts filtered by the Business category
 - Browse posts filtered by the Creative category

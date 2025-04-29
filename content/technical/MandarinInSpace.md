@@ -3,6 +3,7 @@ Date: 2018-05-23
 Category: Technical
 Tags: VideoGames, Education
 Slug: games-1-20180523
+Cover: /images/technical/mandarin_in_space_20250315.png
 
 Even though I have supervised developing of
 hundreds of apps, when boys were learning
@@ -24,14 +25,13 @@ since l hadn't updated in a while. In the
 meantime, enjoy this video... until I get the
 time to update it.
 
-<iframe 
-  width="560" 
-  height="315" 
+<iframe
+  width="560"
+  height="315"
   src="https://www.youtube.com/embed/0iXKbeL1dgg
-" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowfullscreen>
 </iframe>
-

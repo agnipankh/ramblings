@@ -3,6 +3,7 @@ Date: 2024-09-24 10:20
 Category: Creative
 Tags: photograph
 Slug: multipe-exposure-1
+Cover: /images/Orchids1.png
 
 I love painting with light... putting a small
 object in complete darkness and then lighting
@@ -13,5 +14,4 @@ composition.
 
 ![image]({static}/images/Orchids1.png)
 ![image]({static}/images/Orchids2.png)
-
 

@@ -33,14 +33,23 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-STATIC_PATHS = ['images', 'extra/CNAME']
-EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'},}
+STATIC_PATHS = ['images', 'extra/CNAME', 'extra/custom.css', 'extra/custom.js', 'extra/related-articles.js']
+EXTRA_PATH_METADATA = {
+    'extra/CNAME': {'path': 'CNAME'},
+    'extra/custom.css': {'path': 'theme/css/custom.css'},
+    'extra/custom.js': {'path': 'theme/js/custom.js'},
+    'extra/related-articles.js': {'path': 'theme/js/related-articles.js'},
+}
 
 # Use Typogrify
 TYPOGRIFY = True
 
-
+# Theme settings
 THEME="/Users/amit/Dropbox/DCode/ramblings/themes/attila"
+
+# Custom CSS and JS files
+CSS_OVERRIDE = ['theme/css/custom.css']
+JS_OVERRIDE = ['theme/js/custom.js', 'theme/js/related-articles.js']
 
 ### Attila specific
 
@@ -56,18 +65,19 @@ ARCHIVES_SAVE_AS = 'archives.html'
 # URL and path settings
 PAGE_URL = 'pages/{slug}.html'
 PAGE_SAVE_AS = 'pages/{slug}.html'
-INDEX_SAVE_AS = 'blog.html'  # Move the default index to blog.html
+# Using default index.html as the blog page now
 
-# Show post cover images in article listings
-SHOW_COVER_IN_LISTING = True
+# Custom feature settings
+SHOW_RELATED_ARTICLES = True  # Enable related articles feature
+MAX_RELATED_ARTICLES = 15     # Maximum number of related articles to display
+SHOW_COVER_IN_LISTING = True  # Show post cover images in article listings
 
 # Show categories in navigation menu
 SHOW_CATEGORIES_ON_MENU = False  # We're using MENUITEMS instead for more control
 
 # Menu items
 MENUITEMS = (
-    ('Home', '/'),
-    ('Blog', '/blog.html'),
+    ('Blog', '/'),
     ('Technical', '/category/technical.html'),
     ('Business', '/category/business.html'),
     ('Creative', '/category/creative.html'),

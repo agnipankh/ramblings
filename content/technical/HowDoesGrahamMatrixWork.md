@@ -1,8 +1,9 @@
-Title:How does Gram Matrix encode the Style of an Image? 
+Title: How does Gram Matrix encode the Style of an Image?
 Date: 2017-12-01
 Category: Technical
 Tags: Deep Network
 Slug: NN-1-20171201
+Cover: /images/technical/graham_matrix1_20250315.png
 
 In non-photoreal renderings, capturing the style of an image is an extremely tricky and difficult issue. Recently there has been a
 resurgence in this field with the application of Deep Learning to this problem. Specifically, in Gatys' paper, the stylization problem

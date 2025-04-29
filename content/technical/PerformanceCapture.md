@@ -3,6 +3,7 @@ Date: 2025-01-05
 Category: Technical
 Tags: Movies, Photography
 Slug: mocap-1-20250225
+Cover: /images/technical/sil_mocap_20250316.png
 
 This image was my first foray into motion
 capture for Species in BOSS days. We all
@@ -32,6 +33,5 @@ for Auryn but that movie never got green lit.
     <img src="{static}/images/technical/sil_mocap_20250316.png" alt="SIL Motion Capture">
     <figcaption>SIL Motion Capture</figcaption>
 </figure>
-
 
 
