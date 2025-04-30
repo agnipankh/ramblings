@@ -3,6 +3,7 @@ Date: 2020-10-24 10:20
 Category: Creative
 Tags: photograph
 Slug: multipe-exposure-2
+Cover: /images/Devin1.png
 
 
 This was an interesting exercise. Took more work in convincing a 6 year old to talk to a version of himself who is not there...

@@ -1,6 +1,7 @@
 Title: Integrations
 Date: 2024-12-23 10:20
 Category: Creative
+Cover: /images/red_integrated_xmas.png
 
 Long Exposures are nothing but integrations
 over a period of time. I think this will be a cool

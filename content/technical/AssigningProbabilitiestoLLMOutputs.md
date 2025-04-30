@@ -3,7 +3,7 @@ Date: 2025-01-18
 Category: Technical
 Tags: Probability
 Slug: probability-1-20250118
-Cover: /images/technical/graham_matrix1_20250315.png
+Cover: /images/technical/20250429_GenAIConfidence_simple_compose_01jt29qzvne5dt9g1sjssthv5m.png
 
 
 
