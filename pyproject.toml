@@ -1,0 +1,16 @@
+[project]
+name = "ramblings"
+version = "0.1.0"
+description = "Pelican source for Play Deliberately"
+requires-python = ">=3.12"
+dependencies = [
+    "ghp-import>=2.1.0",
+    "invoke>=2.2.0",
+    "livereload>=2.7.1",
+    "markdown>=3.8.2",
+    "pelican>=4.10.2",
+    "typogrify>=2.1.0",
+]
+
+[tool.uv]
+package = false
