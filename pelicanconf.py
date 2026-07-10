@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 AUTHOR = 'Amit Agrawal'
 SITENAME = 'Play Deliberately'
 SITEURL = ""
@@ -45,7 +48,7 @@ EXTRA_PATH_METADATA = {
 TYPOGRIFY = True
 
 # Theme settings
-THEME="/Users/amit/Dropbox/DCode/ramblings/themes/attila"
+THEME = str(Path(__file__).resolve().parent / "themes" / "attila")
 
 # Custom CSS and JS files
 CSS_OVERRIDE = ['theme/css/custom.css']
