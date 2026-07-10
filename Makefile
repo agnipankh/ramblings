@@ -89,6 +89,13 @@ sftp_upload: publish
 rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --include tags --cvs-exclude --delete "$(OUTPUTDIR)"/ "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
 
+# WARNING: This target is STALE and does NOT publish the live site.
+# It pushes to `origin` (the ramblings CMS repo), but the live site
+# (amit-agrawal.com) is served from the separate agnipankh.github.io repo.
+# Running this publishes HTML to a branch nobody reads. Do NOT use it.
+# To publish for real, follow the README ("Pushing Content to the live site"):
+#   uv run ghp-import output -b gh-pages
+#   git push git@github.com:agnipankh/agnipankh.github.io.git gh-pages:main
 github: publish
 	ghp-import -m "$(GITHUB_PAGES_COMMIT_MESSAGE)" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)" --no-jekyll
 	git push origin $(GITHUB_PAGES_BRANCH)
