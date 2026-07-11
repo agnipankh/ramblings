@@ -53,7 +53,10 @@
           </span>
         </div>
         {% if featured_image %}
-        <img class="featured-img" src="{{ featured_image }}" alt="{{ featured.title|striptags }}">
+        {% if '/images/' in featured_image %}
+          {% set featured_image = featured_image|replace('/images/', '/images/thumbs/featured/')|replace('.png', '.webp')|replace('.jpeg', '.webp')|replace('.jpg', '.webp')|replace('.gif', '.webp') %}
+        {% endif %}
+        <img class="featured-img" src="{{ featured_image }}" alt="{{ featured.title|striptags }}" fetchpriority="high">
         {% endif %}
       </a>
 

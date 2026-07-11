@@ -15,7 +15,10 @@
 <article class="post grid-card">
   <a class="grid-card-link" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">
     {% if card_image %}
-    <img class="grid-card-img" src="{{ card_image }}" alt="{{ article.title|striptags }}" loading="lazy">
+    {% if '/images/' in card_image %}
+      {% set card_image = card_image|replace('/images/', '/images/thumbs/card/')|replace('.png', '.webp')|replace('.jpeg', '.webp')|replace('.jpg', '.webp')|replace('.gif', '.webp') %}
+    {% endif %}
+    <img class="grid-card-img" src="{{ card_image }}" alt="{{ article.title|striptags }}" loading="lazy" decoding="async">
     {% else %}
     <svg class="grid-card-img grid-card-placeholder" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ article.title|striptags }}">
       <rect width="320" height="200" fill="#0a0a0a"/>

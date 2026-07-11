@@ -42,3 +42,32 @@ def test_declared_cover_files_exist():
             if not (CONTENT / cover.lstrip("/")).exists():
                 broken.append(f"{path.relative_to(CONTENT)} -> {cover}")
     assert broken == [], f"Covers pointing at missing files: {broken}"
+
+
+def test_thumbnail_generator_covers_every_declared_cover():
+    """Templates rewrite covers to images/thumbs/<profile>/<name>.webp;
+    the generator must produce exactly those paths for every cover."""
+    import importlib.util
+
+    script = CONTENT.parent / "scripts" / "generate_thumbnails.py"
+    spec = importlib.util.spec_from_file_location("generate_thumbnails", script)
+    assert spec is not None and spec.loader is not None
+    gen = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(gen)
+
+    sources = set(gen.iter_sources())
+    for path in article_files():
+        cover = declared_cover(path)
+        if not (cover and cover.startswith("/images")):
+            continue
+        source = CONTENT / cover.lstrip("/")
+        assert source in sources, f"{cover} not picked up by the generator"
+        for profile in ("card", "featured", "cover"):
+            expected = (
+                CONTENT
+                / "images"
+                / "thumbs"
+                / profile
+                / source.relative_to(CONTENT / "images").with_suffix(".webp")
+            )
+            assert gen.thumb_path(source, profile) == expected

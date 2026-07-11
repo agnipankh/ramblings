@@ -130,14 +130,14 @@
           {% endif %}
         </div>
         {# skin: no `cover` class — keeps script.js's parallax and its
-           `cover-active` nav inversion away from the framed figure #}
+           `cover-active` nav inversion away from the framed figure.
+           Serve the 1600px WebP derivative instead of the original. #}
         {% if selected_cover %}
+          {% if '/images/' in selected_cover %}
+            {% set selected_cover = selected_cover|replace('/images/', '/images/thumbs/cover/')|replace('.png', '.webp')|replace('.jpeg', '.webp')|replace('.jpg', '.webp')|replace('.gif', '.webp') %}
+          {% endif %}
           <div class="post-cover">
-            {% if "image_process" is plugin_enabled %}
-              <img class="image-process-large-photo" src="{{ selected_cover }}" alt="{{ current_title }}" />
-            {% else %}
-              <img src="{{ selected_cover }}" alt="{{ current_title }}" />
-            {% endif %}
+            <img src="{{ selected_cover }}" alt="{{ current_title }}" />
           </div>
         {% elif selected_color %}
           <div class="post-cover" style="background-color: {{ selected_color }}">
