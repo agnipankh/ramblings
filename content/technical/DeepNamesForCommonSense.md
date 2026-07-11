@@ -3,7 +3,7 @@ Date: 2024-10-23
 Category: Technical
 Tags: Bayesian
 Slug: bayesian-1-20241023
-Cover: /images/technical/AgenticPipeline.png
+Cover: /images/technical/deep_names_20260711.jpg
 
 Sometimes, we encounter complex names for concepts we've been using all along. Recently, I started exploring Dempster-Shafer Theory (more on that as I learn further) and came across the following:
 
