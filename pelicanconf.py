@@ -3,6 +3,8 @@ from pathlib import Path
 
 AUTHOR = 'Amit Agrawal'
 SITENAME = 'Play Deliberately'
+# Rendered as the gray second line of the two-tone homepage header — reword to taste
+SITESUBTITLE = 'Essays on technology, business, and deliberate craft'
 SITEURL = ""
 
 PATH = "content"
@@ -31,7 +33,9 @@ SOCIAL = (
     ("Linked-in", "https://www.linkedin.com/in/agnipankh/"),
 )
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 20
+
+COPYRIGHT_YEAR = 2026
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
@@ -56,7 +60,9 @@ JS_OVERRIDE = ['theme/js/custom.js', 'theme/js/related-articles.js']
 
 ### Attila specific
 
-HOME_COVER = 'https://geekyshacklebolt.github.io/blog/images/my-blog-header-bg.jpg'
+# Editorial Monochrome skin: type-only homepage header (no cover image), and
+# the theme's Google-CDN fonts (Montserrat/Lato) are never referenced by its CSS
+ALLOW_GOOGLE_FONTS = False
 # URLs
 TAGS_URL = 'tags.html'
 TAGS_SAVE_AS = 'tags.html'
