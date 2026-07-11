@@ -100,11 +100,13 @@
               {% endif %}
             {% endif %}
 
+            {% if author_avatar %}
             <figure class="post-meta-avatar avatar">
               <a class="author-avatar" href="{{ SITEURL }}/{{ author.url }}">
                 <img class="author-profile-image" src="{{author_avatar}}" alt="{{ author_name }}" />
               </a>
             </figure>
+            {% endif %}
           {% endfor %}
           </div>
 
@@ -127,8 +129,10 @@
           &bull; {{ article.stats['read_mins'] }} min read
           {% endif %}
         </div>
+        {# skin: no `cover` class — keeps script.js's parallax and its
+           `cover-active` nav inversion away from the framed figure #}
         {% if selected_cover %}
-          <div class="post-cover cover">
+          <div class="post-cover">
             {% if "image_process" is plugin_enabled %}
               <img class="image-process-large-photo" src="{{ selected_cover }}" alt="{{ current_title }}" />
             {% else %}
@@ -136,7 +140,7 @@
             {% endif %}
           </div>
         {% elif selected_color %}
-          <div class="post-cover cover" style="background-color: {{ selected_color }}">
+          <div class="post-cover" style="background-color: {{ selected_color }}">
         {% endif %}
       </div>
     </header>

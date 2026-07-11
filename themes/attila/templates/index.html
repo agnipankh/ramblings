@@ -6,61 +6,71 @@
     {% include 'partials/jsonld.html' %}
 {% endblock %}
 
-{% if HEADER_COVER %}
-  {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HEADER_COVER %}
-  {% elif HEADER_COVER.startswith('/') %}
-    {% set selected_cover = SITEURL+HEADER_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
-  {% endif %}
-{% elif HOME_COVER %}
-  {% if HOME_COVER|lower|truncate(4, True, '') == "http" %}
-    {% set selected_cover = HOME_COVER %}
-  {% elif HOME_COVER.startswith('/') %}
-    {% set selected_cover = SITEURL+HOME_COVER %}
-  {% else %}
-    {% set selected_cover = SITEURL+"/"+HOME_COVER %}
-  {% endif %}
-{% elif HEADER_COLOR %}
-  {% set selected_color = HEADER_COLOR %}
-{% elif HOME_COLOR %}
-  {% set selected_color = HOME_COLOR %}
-{% endif %}
-
 {% block header %}
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="blog-header {% if selected_cover or selected_color %} has-cover {% endif %}">
+    {# Editorial Monochrome skin: type-only hero — kicker, site name, subtitle #}
+    <header class="blog-header">
       <div class="inner">
         <div class="box blog-box">
+          <span class="blog-kicker">A blog by {{ AUTHOR }}</span>
           <h1 class="blog-name">{{ SITENAME }}</h1>
           {% if SITESUBTITLE %}
           <span class="blog-description">{{ SITESUBTITLE }}</span>
           {% endif %}
         </div>
-
-        {% if selected_cover %}
-          <div class="blog-cover cover">
-            {% if "image_process" is plugin_enabled %}
-              <img class="image-process-large-photo" src="{{ selected_cover }}" alt="{{ current_title }}" />
-            {% else %}
-              <img src="{{ selected_cover }}" alt="{{ current_title }}" />
-            {% endif %}
-          </div>
-        {% elif selected_color %}
-          <div class="blog-cover cover" style="background-color: {{ selected_color }}">
-        {% endif %}
       </div>
     </header>
-
 {% endblock header %}
 
 {% block content %}
 
 <div id="index" class="container">
   <main class="content" role="main">
-    {% include "partials/loop.html" %}
+
+    {% if articles_page.number == 1 and articles_page.object_list %}
+      {# Featured: the most recent essay gets a full-width split panel #}
+      {% set featured = articles_page.object_list[0] %}
+      {% set featured_image = None %}
+      {% if featured.cover %}
+        {% if featured.cover|lower|truncate(4, True, '') == "http" %}
+          {% set featured_image = featured.cover %}
+        {% elif featured.cover.startswith('/') %}
+          {% set featured_image = SITEURL+featured.cover %}
+        {% else %}
+          {% set featured_image = SITEURL+"/"+featured.cover %}
+        {% endif %}
+      {% endif %}
+
+      <a class="featured-card {% if not featured_image %}featured-card-noimage{% endif %}" href="{{ SITEURL }}/{{ featured.url }}">
+        <div class="featured-body">
+          <span class="featured-label">Latest essay</span>
+          <h2 class="featured-title">{{ featured.title }}</h2>
+          {% if featured.summary %}
+          <p class="featured-excerpt">{{ featured.summary|striptags|truncate(180) }}</p>
+          {% endif %}
+          <span class="featured-meta">
+            {% if featured.category %}<b>{{ featured.category }}</b> &middot; {% endif %}<time datetime="{{ featured.date.isoformat() }}">{{ featured.locale_date }}</time>
+            {% if featured.stats and 'read_mins' in featured.stats %} &middot; {{ featured.stats['read_mins'] }} min read{% endif %}
+          </span>
+        </div>
+        {% if featured_image %}
+        <img class="featured-img" src="{{ featured_image }}" alt="{{ featured.title|striptags }}">
+        {% endif %}
+      </a>
+
+      <div class="grid" role="list">
+        {% for article in articles_page.object_list[1:] %}
+          {% include "partials/card.html" %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="grid" role="list">
+        {% for article in articles_page.object_list %}
+          {% include "partials/card.html" %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% include "partials/pagination.html" %}
   </main>
 </div>
 {% endblock content %}

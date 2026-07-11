@@ -172,13 +172,15 @@
   {% set current_title=article.title %}
   {% endif %}
 
-  {% if tag %}
+  {# Pelican also passes `category`/`author` in article context, so guard
+     with `not article` or every article page gets category-template #}
+  {% if tag and not article %}
   {% set body_class='tag-template' %}
   {% set current_url='/'+tag.url %}
   {% set current_title='Tag '+tag.name %}
   {% endif %}
 
-  {% if category %}
+  {% if category and not article %}
   {% set body_class='category-template' %}
   {% set current_url='/'+category.url %}
   {% set current_title='Category '+category.name %}
@@ -190,7 +192,7 @@
   {% set current_title=page.title %}
   {% endif %}
 
-  {% if author %}
+  {% if author and not article %}
   {% set body_class='author-template' %}
   {% set current_url='/'+author.url %}
   {% set current_title='Author '+author.name %}

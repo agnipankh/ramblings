@@ -1,0 +1,42 @@
+{# Editorial Monochrome skin: one article as a masonry grid card.
+   Expects `article` in context. Falls back to a generated monochrome
+   tile when an article has no cover (the pytest cover check should
+   make that rare). #}
+{% set card_image = None %}
+{% if article.cover %}
+  {% if article.cover|lower|truncate(4, True, '') == "http" %}
+    {% set card_image = article.cover %}
+  {% elif article.cover.startswith('/') %}
+    {% set card_image = SITEURL+article.cover %}
+  {% else %}
+    {% set card_image = SITEURL+"/"+article.cover %}
+  {% endif %}
+{% endif %}
+<article class="post grid-card">
+  <a class="grid-card-link" href="{{ SITEURL }}/{{ article.url }}" title="Permalink to {{ article.title|striptags }}">
+    {% if card_image %}
+    <img class="grid-card-img" src="{{ card_image }}" alt="{{ article.title|striptags }}" loading="lazy">
+    {% else %}
+    <svg class="grid-card-img grid-card-placeholder" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="{{ article.title|striptags }}">
+      <rect width="320" height="200" fill="#0a0a0a"/>
+      <g stroke="#3a3d42" stroke-width="1" fill="none">
+        <line x1="0" y1="166" x2="320" y2="166"/>
+        <line x1="0" y1="133" x2="320" y2="133"/>
+        <circle cx="252" cy="62" r="34"/>
+        <rect x="36" y="36" width="52" height="52"/>
+      </g>
+      {% if article.category %}
+      <text x="38" y="185" font-family="-apple-system, Helvetica, sans-serif" font-size="13" letter-spacing="3" fill="#8a8f98">{{ article.category|upper }}</text>
+      {% endif %}
+      <text x="36" y="104" font-family="-apple-system, Helvetica, sans-serif" font-size="58" font-weight="700" fill="#ffffff">{{ article.title|striptags|truncate(2, True, '') }}</text>
+    </svg>
+    {% endif %}
+    <div class="grid-card-body">
+      <div class="grid-card-meta">
+        {% if article.category %}<span class="grid-card-cat">{{ article.category }}</span>{% endif %}
+        <time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %Y') }}</time>
+      </div>
+      <h2 class="grid-card-title">{{ article.title }}</h2>
+    </div>
+  </a>
+</article>
